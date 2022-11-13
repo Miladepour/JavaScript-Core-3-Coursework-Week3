@@ -6,3 +6,18 @@ let order = [
   { itemName: "Hot Coffee", quantity: 2, unitPrice: 1.0 },
   { itemName: "Hash Brown", quantity: 4, unitPrice: 0.4 },
 ];
+
+function receiptCreator() {
+  let total = 0;
+  console.log(`   QTY     ITEM         TOTAL`);
+  order.forEach(item =>{
+    const {itemName,quantity,unitPrice} = item
+    const sum = unitPrice * quantity
+    total += sum
+    console.log(`
+    ${quantity}      ${itemName}      ${sum.toFixed(2)}
+    `);
+  })
+console.log(`    Total: ${total}`)
+}
+receiptCreator()
